@@ -6,15 +6,19 @@ import java.util.Map;
  * - double
  */
 public class LabGradesCalculator {
-    public double computeAverage(Map<String, Integer> labGrades) {
+
+
+    public double computeAverage(double[] labGrades) {
         int sum = 0;
         int count = 0;
 
-        for (Integer grade : labGrades.values()) {
+        for (double grade : labGrades) {
             sum += grade;
             count++;
         }
 
         return (double) sum / count;
     }
+
+
 }
