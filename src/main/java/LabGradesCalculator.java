@@ -62,6 +62,4 @@ public class LabGradesCalculator {
         System.out.printf("Average: %.2f\n", result.average);
         System.out.printf("Grade: %s\n", result.letter);
     }
-
-
 }
