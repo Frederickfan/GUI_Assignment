@@ -40,10 +40,5 @@ public class GUI {
          frame.setSize(420, 420);
          frame.setVisible(true);
 
-
-
-
-
-
     }
 }
