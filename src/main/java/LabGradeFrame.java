@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.jar.JarEntry;
 
 public class LabGradeFrame extends JFrame {
     private final JTextField[] labGrades = new JTextField[10];
@@ -17,6 +16,7 @@ public class LabGradeFrame extends JFrame {
         JPanel input = new JPanel();
         input.setLayout(new GridLayout(10, 2, 3, 3));
         this.add(input);
+        this.setTitle("Grade Display");
 
         // for each row, add label and input field.
         for (int i= 0; i < labGrades.length; i++) {
@@ -25,11 +25,12 @@ public class LabGradeFrame extends JFrame {
             input.add(labGrades[i]);
         }
 
+        input.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.pack();
-
     }
 
     public static void main(String[] args) {
