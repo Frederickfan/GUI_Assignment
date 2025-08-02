@@ -1,10 +1,10 @@
 import java.util.Arrays;
-import java.util.Map;
 
 /**
- * LabGradesCalculator used to calculate average lab grades.
+ * LabGradesCalculator: A calculator that can calculate average, total and letter grade from an ArrayList of lab grades.
+ * Each method in the class has a single responsibility and separation of concern.
  * Return:
- * - double
+ * - Result object that encapsulates average, total, and letter grade.
  */
 public class LabGradesCalculator {
 
@@ -39,7 +39,7 @@ public class LabGradesCalculator {
                 .orElseThrow(() -> new IllegalArgumentException("No valid percentage data!"));
     }
 
-    public Result calculate(double[] labGrades) {
+    public Result calculateLabResult(double[] labGrades) {
         // invalid data, null check.
         if (labGrades == null || labGrades.length == 0) {
             throw new IllegalArgumentException("No valid grades data provided!");
@@ -56,7 +56,7 @@ public class LabGradesCalculator {
     public static void main(String[] args) {
         double[] grades = {20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 16};
         LabGradesCalculator calculator = new LabGradesCalculator();
-        Result result = calculator.calculate(grades);
+        Result result = calculator.calculateLabResult(grades);
 
         System.out.printf("Total: %.2f\n", result.total);
         System.out.printf("Average: %.2f\n", result.average);
