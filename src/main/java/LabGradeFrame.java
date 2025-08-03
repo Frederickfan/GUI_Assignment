@@ -3,6 +3,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * LabGradesFrame: A JFrame that show input fields for lab grades and button for calculating lab grades:
+ * Includes
+ * - average
+ * - total
+ * - letter grade
+ * */
 public class LabGradeFrame extends JFrame implements ActionListener {
     private final JTextField[] labGrades = new JTextField[10];
     private final JLabel fullGrade = new JLabel("Full Grade:200");
