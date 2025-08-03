@@ -56,7 +56,21 @@ public class LabGradeFrame extends JFrame implements ActionListener {
 
         for (int i = 0; i < this.labGrades.length; i++) {
             String labGradeText = this.labGrades[i].getText().trim();
-            double grade = Double.parseDouble(labGradeText);
+            double grade = 0.0;
+
+            try {
+                if (!labGradeText.isBlank()) {
+                    grade = Double.parseDouble(labGradeText);
+                    // consider edge case out of range value.
+                    if (grade < 0 || grade > LabGradesCalculator.FULL_GRADE) {
+                        grade = 0;
+                    }
+                }
+            } catch (NumberFormatException ex) {
+                // for invalid format, just treat as 0.
+                grade = 0.0;
+            }
+
             extractedGrades[i] = grade;
         }
 
